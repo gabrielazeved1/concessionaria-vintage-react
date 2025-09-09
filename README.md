@@ -87,8 +87,7 @@ Antes de começar, garanta que tem os seguintes softwares instalados na sua máq
 1.  **Clonar o Repositório:**
     Abra um terminal e clone o projeto para a sua máquina local.
     ```bash
-    git clone [URL_DO_SEU_REPOSITORIO]
-    cd [NOME_DA_PASTA_DO_PROJETO]
+    git clone git@github.com:gabrielazeved1/concessionaria-vintage-react.git
     ```
 
 2.  **Construir e Iniciar os Contentores:**
