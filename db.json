@@ -26,9 +26,9 @@
       "modelo": "Mustang Boss 429",
       "ano": 1969,
       "preco": 950000,
-      "franquiaId": 1,
-      "imagem": "https://exemplo.com/mustang.jpg",
-      "descricao": "Um ícone americano com um motor V8 monstruoso. Totalmente restaurado."
+      "imagem": "https://placehold.co/600x400/264653/FFF?text=Mustang",
+      "descricao": "Um ícone americano com um motor V8 monstruoso. Totalmente restaurado.",
+      "franquia": 1
     },
     {
       "id": 2,
@@ -36,9 +36,9 @@
       "modelo": "Opala SS",
       "ano": 1976,
       "preco": 150000,
-      "franquiaId": 3,
-      "imagem": "https://exemplo.com/opala.jpg",
-      "descricao": "O lendário Opala na sua versão esportiva SS. Motor 6 cilindros 4100."
+      "imagem": "https://placehold.co/600x400/2a9d8f/FFF?text=Opala+SS",
+      "descricao": "O lendário Opala na sua versão esportiva SS. Motor 6 cilindros 4100.",
+      "franquia": 3
     },
     {
       "id": 3,
@@ -46,9 +46,10 @@
       "modelo": "Karmann-Ghia",
       "ano": 1968,
       "preco": 120000,
-      "franquiaId": 2,
-      "imagem": "https://exemplo.com/karmannghia.jpg",
-      "descricao": "Design alemão com alma brasileira. Um dos carros mais bonitos já feitos."
+      "imagem": "https://placehold.co/600x400/e9c46a/000?text=Karmann-Ghia",
+      "descricao": "Design alemão com alma brasileira. Um dos carros mais bonitos já feitos.",
+      "franquia": 2
     }
   ]
 }
+

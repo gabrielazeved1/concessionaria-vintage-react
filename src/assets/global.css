@@ -1,30 +1,43 @@
-/* src/assets/global.css */
-
+/* ESTILOS GLOBAIS E DE LAYOUT BÁSICO */
 body {
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
-  background-color: #f4f4f4;
+  background-color: #f4f7f6;
+  color: #333;
 }
 
 header, footer {
-  background-color: #333;
+  background-color: #264653; /* Azul escuro */
   color: white;
   padding: 1rem 2rem;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 header nav a {
   color: white;
   margin: 0 1rem;
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+header nav a:hover {
+  color: #e9c46a; /* Amarelo queimado */
 }
 
 main {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  min-height: calc(100vh - 200px); /* Garante que o footer fique em baixo */
 }
 
+h1 {
+  color: #264653;
+}
+
+/* ESTILOS DA PÁGINA DE CATÁLOGO */
 .car-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -36,8 +49,14 @@ main {
   border-radius: 8px;
   padding: 1rem;
   background-color: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .car-card img {
@@ -49,35 +68,24 @@ main {
 
 .car-card h2 {
   margin: 0.5rem 0;
+  color: #333;
 }
 
 .car-card span {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #2a9d8f;
+  color: #2a9d8f; /* Verde-azulado */
   display: block;
   margin: 1rem 0;
 }
 
-.car-card button {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  background-color: #333;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.car-card button:hover {
-  background-color: #555;
-}
+/* ESTILO DO BOTÃO/LINK "VER DETALHES" */
 .details-button {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   border: none;
   background-color: #333;
-  color: white !important; /* Adicionado !important para garantir que a cor seja branca */
+  color: white !important;
   text-decoration: none;
   border-radius: 4px;
   cursor: pointer;
@@ -89,23 +97,114 @@ main {
 .details-button:hover {
   background-color: #555;
 }
+
+/* ESTILOS DA PÁGINA DE DETALHES DO CARRO */
 .detalhes-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   background-color: white;
   padding: 2rem;
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .detalhes-container img {
-  max-width: 50%;
+  width: 100%;
   border-radius: 8px;
+  object-fit: cover;
 }
 
-.detalhes-container .info .preco {
-  font-size: 2rem;
+.detalhes-container .info h2 {
+  font-size: 1.2rem;
+  color: #555;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.detalhes-container .info p {
+  line-height: 1.8;
+}
+
+.detalhes-container .preco {
+  font-size: 2.5rem;
   font-weight: bold;
   color: #2a9d8f;
   display: block;
   margin-top: 1.5rem;
 }
+
+/* ESTILOS PARA O COMPONENTE DA CALCULADORA DE FRETE */
+.shipping-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.shipping-container h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cep-input-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.cep-input-group input {
+  flex-grow: 1;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.cep-input-group button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background-color: #2a9d8f;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cep-input-group button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.cep-input-group button:hover:not(:disabled) {
+  background-color: #264653;
+}
+
+.error-message {
+  color: #e76f51;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.address-details {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+.address-details p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.shipping-cost {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2a9d8f;
+  margin-top: 1rem !important;
+}
+
