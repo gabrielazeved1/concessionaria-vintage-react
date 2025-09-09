@@ -2,21 +2,63 @@
   "franquias": [
     {
       "id": 1,
-      "nome": "Clássicos de São Paulo",
+      "nome": "Vintage São Paulo",
       "cidade": "São Paulo",
       "estado": "SP"
     },
     {
       "id": 2,
-      "nome": "Relíquias do Rio",
+      "nome": "Vintage Rio de Janeiro",
       "cidade": "Rio de Janeiro",
       "estado": "RJ"
     },
     {
       "id": 3,
-      "nome": "Joias de Minas",
+      "nome": "Vintage Belo Horizonte",
       "cidade": "Belo Horizonte",
       "estado": "MG"
+    },
+    {
+      "id": 4,
+      "nome": "Vintage Brasília",
+      "cidade": "Brasília",
+      "estado": "DF"
+    },
+    {
+      "id": 5,
+      "nome": "Vintage Salvador",
+      "cidade": "Salvador",
+      "estado": "BA"
+    },
+    {
+      "id": 6,
+      "nome": "Vintage Porto Alegre",
+      "cidade": "Porto Alegre",
+      "estado": "RS"
+    },
+    {
+      "id": 7,
+      "nome": "Vintage Curitiba",
+      "cidade": "Curitiba",
+      "estado": "PR"
+    },
+    {
+      "id": 8,
+      "nome": "Vintage Fortaleza",
+      "cidade": "Fortaleza",
+      "estado": "CE"
+    },
+    {
+      "id": 9,
+      "nome": "Vintage Manaus",
+      "cidade": "Manaus",
+      "estado": "AM"
+    },
+    {
+      "id": 10,
+      "nome": "Vintage Recife",
+      "cidade": "Recife",
+      "estado": "PE"
     }
   ],
   "carros": [
@@ -26,29 +68,299 @@
       "modelo": "Mustang Boss 429",
       "ano": 1969,
       "preco": 950000,
-      "franquiaId": 1, 
+      "franquiaId": 1,
       "imagem": "https://placehold.co/600x400/264653/FFF?text=Mustang",
       "descricao": "Um ícone americano com um motor V8 monstruoso. Totalmente restaurado."
     },
     {
       "id": 2,
-      "marca": "Chevrolet",
-      "modelo": "Opala SS",
-      "ano": 1976,
-      "preco": 150000,
-      "franquiaId": 3,
-      "imagem": "https://placehold.co/600x400/2a9d8f/FFF?text=Opala+SS",
-      "descricao": "O lendário Opala na sua versão esportiva SS. Motor 6 cilindros 4100."
+      "marca": "Ford",
+      "modelo": "Maverick GT",
+      "ano": 1974,
+      "preco": 250000,
+      "franquiaId": 1,
+      "imagem": "https://placehold.co/600x400/2a9d8f/FFF?text=Maverick",
+      "descricao": "O 'muscle car' brasileiro por excelência. Versão GT V8, o sonho de uma geração."
     },
     {
       "id": 3,
+      "marca": "Puma",
+      "modelo": "GTS Conversível",
+      "ano": 1978,
+      "preco": 95000,
+      "franquiaId": 1,
+      "imagem": "https://placehold.co/600x400/e9c46a/000?text=Puma+GTS",
+      "descricao": "Charme e esportividade nacional com carroceria de fibra e mecânica VW."
+    },
+    {
+      "id": 4,
       "marca": "Volkswagen",
       "modelo": "Karmann-Ghia",
       "ano": 1968,
       "preco": 120000,
       "franquiaId": 2,
-      "imagem": "https://placehold.co/600x400/e9c46a/000?text=Karmann-Ghia",
+      "imagem": "https://placehold.co/600x400/f4a261/FFF?text=Karmann-Ghia",
       "descricao": "Design alemão com alma brasileira. Um dos carros mais bonitos já feitos."
+    },
+    {
+      "id": 5,
+      "marca": "Willys",
+      "modelo": "Interlagos",
+      "ano": 1966,
+      "preco": 180000,
+      "franquiaId": 2,
+      "imagem": "https://placehold.co/600x400/e76f51/FFF?text=Interlagos",
+      "descricao": "O primeiro carro esporte do Brasil, baseado no Renault Alpine A108."
+    },
+    {
+      "id": 6,
+      "marca": "Moto Guzzi",
+      "modelo": "V7 Sport",
+      "ano": 1972,
+      "preco": 85000,
+      "franquiaId": 2,
+      "imagem": "https://placehold.co/600x400/d62828/FFF?text=Moto+Guzzi",
+      "descricao": "Uma moto italiana clássica, famosa pelo seu motor V-Twin transversal e estilo café racer."
+    },
+    {
+      "id": 7,
+      "marca": "Chevrolet",
+      "modelo": "Opala SS",
+      "ano": 1976,
+      "preco": 150000,
+      "franquiaId": 3,
+      "imagem": "https://placehold.co/600x400/003049/FFF?text=Opala+SS",
+      "descricao": "O lendário Opala na sua versão esportiva SS. Motor 6 cilindros 4100."
+    },
+    {
+      "id": 8,
+      "marca": "Dodge",
+      "modelo": "Charger R/T",
+      "ano": 1975,
+      "preco": 350000,
+      "franquiaId": 3,
+      "imagem": "https://placehold.co/600x400/669bbc/FFF?text=Charger+R/T",
+      "descricao": "O mais potente 'muscle car' nacional da sua época. Pura força e estilo."
+    },
+    {
+      "id": 9,
+      "marca": "Fiat",
+      "modelo": "147 Rallye",
+      "ano": 1980,
+      "preco": 45000,
+      "franquiaId": 3,
+      "imagem": "https://placehold.co/600x400/fdf0d5/000?text=Fiat+147",
+      "descricao": "Versão apimentada do pequeno notável que revolucionou o mercado brasileiro."
+    },
+    {
+      "id": 10,
+      "marca": "Volkswagen",
+      "modelo": "Fusca 'Itamar'",
+      "ano": 1996,
+      "preco": 55000,
+      "franquiaId": 4,
+      "imagem": "https://placehold.co/600x400/c1121f/FFF?text=Fusca",
+      "descricao": "O último da sua espécie. A série final do amado Fusca no Brasil."
+    },
+    {
+      "id": 11,
+      "marca": "Chevrolet",
+      "modelo": "Caravan Comodoro",
+      "ano": 1988,
+      "preco": 65000,
+      "franquiaId": 4,
+      "imagem": "https://placehold.co/600x400/000000/FFF?text=Caravan",
+      "descricao": "A perua do Opala, combinando espaço, conforto e o poderoso motor de 6 cilindros."
+    },
+    {
+      "id": 12,
+      "marca": "Honda",
+      "modelo": "CB 750 Four 'Sete Galo'",
+      "ano": 1974,
+      "preco": 90000,
+      "franquiaId": 4,
+      "imagem": "https://placehold.co/600x400/780000/FFF?text=CB+750",
+      "descricao": "Considerada a primeira superbike moderna. Uma lenda de 4 cilindros."
+    },
+    {
+      "id": 13,
+      "marca": "Volkswagen",
+      "modelo": "Brasília",
+      "ano": 1979,
+      "preco": 30000,
+      "franquiaId": 5,
+      "imagem": "https://placehold.co/600x400/fca311/FFF?text=Brasilia",
+      "descricao": "Design 100% nacional, um sucesso de vendas com muito espaço interno."
+    },
+    {
+      "id": 14,
+      "marca": "Ford",
+      "modelo": "Corcel GT",
+      "ano": 1971,
+      "preco": 70000,
+      "franquiaId": 5,
+      "imagem": "https://placehold.co/600x400/14213d/FFF?text=Corcel+GT",
+      "descricao": "Versão esportiva do robusto Corcel, com faixas e visual agressivo."
+    },
+    {
+      "id": 15,
+      "marca": "Yamaha",
+      "modelo": "RD 350LC 'Viúva Negra'",
+      "ano": 1988,
+      "preco": 75000,
+      "franquiaId": 5,
+      "imagem": "https://placehold.co/600x400/e5e5e5/000?text=RD+350LC",
+      "descricao": "Uma moto 2 tempos notoriamente rápida e emocionante. Para pilotos experientes."
+    },
+    {
+      "id": 16,
+      "marca": "Volkswagen",
+      "modelo": "SP2",
+      "ano": 1973,
+      "preco": 160000,
+      "franquiaId": 6,
+      "imagem": "https://placehold.co/600x400/ffb703/000?text=VW+SP2",
+      "descricao": "Considerado um dos VW mais bonitos já feitos, com design esportivo e exclusivo."
+    },
+    {
+      "id": 17,
+      "marca": "Alfa Romeo",
+      "modelo": "2300 Ti",
+      "ano": 1981,
+      "preco": 80000,
+      "franquiaId": 6,
+      "imagem": "https://placehold.co/600x400/fb8500/FFF?text=Alfa+Romeo",
+      "descricao": "Um sedã de luxo com DNA esportivo italiano e fabricação nacional."
+    },
+    {
+      "id": 18,
+      "marca": "Vespa",
+      "modelo": "PX 200",
+      "ano": 1985,
+      "preco": 35000,
+      "franquiaId": 6,
+      "imagem": "https://placehold.co/600x400/8ecae6/000?text=Vespa",
+      "descricao": "A scooter mais icônica do mundo. Estilo, praticidade e charme atemporal."
+    },
+    {
+      "id": 19,
+      "marca": "Chevrolet",
+      "modelo": "Chevette GP",
+      "ano": 1977,
+      "preco": 50000,
+      "franquiaId": 7,
+      "imagem": "https://placehold.co/600x400/219ebc/FFF?text=Chevette+GP",
+      "descricao": "Série especial esportiva em homenagem ao Grande Prêmio do Brasil de F1."
+    },
+    {
+      "id": 20,
+      "marca": "Ford",
+      "modelo": "Escort XR3",
+      "ano": 1990,
+      "preco": 60000,
+      "franquiaId": 7,
+      "imagem": "https://placehold.co/600x400/023047/FFF?text=Escort+XR3",
+      "descricao": "O sonho dos jovens nos anos 80 e 90. Versão conversível, um ícone."
+    },
+    {
+      "id": 21,
+      "marca": "Lambretta",
+      "modelo": "Li 150",
+      "ano": 1964,
+      "preco": 40000,
+      "franquiaId": 7,
+      "imagem": "https://placehold.co/600x400/ffb703/000?text=Lambretta",
+      "descricao": "A grande rival da Vespa, com um design e engenharia únicos. Um clássico."
+    },
+    {
+      "id": 22,
+      "marca": "Volkswagen",
+      "modelo": "Kombi 'Corujinha'",
+      "ano": 1975,
+      "preco": 85000,
+      "franquiaId": 8,
+      "imagem": "https://placehold.co/600x400/fb8500/FFF?text=Kombi",
+      "descricao": "A primeira geração da amada 'Velha Senhora'. Símbolo de liberdade."
+    },
+    {
+      "id": 23,
+      "marca": "Gurgel",
+      "modelo": "X-12",
+      "ano": 1985,
+      "preco": 38000,
+      "franquiaId": 8,
+      "imagem": "https://placehold.co/600x400/8ecae6/000?text=Gurgel",
+      "descricao": "Um valente utilitário nacional, com mecânica VW e carroceria de 'Plasteel'."
+    },
+    {
+      "id": 24,
+      "marca": "Harley-Davidson",
+      "modelo": "Sportster Ironhead",
+      "ano": 1979,
+      "preco": 68000,
+      "franquiaId": 8,
+      "imagem": "https://placehold.co/600x400/219ebc/FFF?text=Harley",
+      "descricao": "O som inconfundível do motor 'Ironhead'. Uma moto com atitude e história."
+    },
+    {
+      "id": 25,
+      "marca": "Simca",
+      "modelo": "Chambord",
+      "ano": 1965,
+      "preco": 110000,
+      "franquiaId": 9,
+      "imagem": "https://placehold.co/600x400/023047/FFF?text=Simca",
+      "descricao": "Luxo e opulência dos anos 60, com seu motor V8 e design 'rabo de peixe'."
+    },
+    {
+      "id": 26,
+      "marca": "FNM",
+      "modelo": "2000 JK",
+      "ano": 1968,
+      "preco": 98000,
+      "franquiaId": 9,
+      "imagem": "https://placehold.co/600x400/ffb703/000?text=FNM+JK",
+      "descricao": "O 'Fenemê', um sedã imponente e robusto com motor Alfa Romeo."
+    },
+    {
+      "id": 27,
+      "marca": "BMW",
+      "modelo": "R75/5",
+      "ano": 1971,
+      "preco": 82000,
+      "franquiaId": 9,
+      "imagem": "https://placehold.co/600x400/fb8500/FFF?text=BMW+R75",
+      "descricao": "Engenharia alemã clássica com o famoso motor boxer. Confiável e estilosa."
+    },
+    {
+      "id": 28,
+      "marca": "Miura",
+      "modelo": "Targa",
+      "ano": 1983,
+      "preco": 72000,
+      "franquiaId": 10,
+      "imagem": "https://placehold.co/600x400/8ecae6/000?text=Miura",
+      "descricao": "Um fora-de-série gaúcho com design arrojado e tecnologia à frente do seu tempo."
+    },
+    {
+      "id": 29,
+      "marca": "Chevrolet",
+      "modelo": "3100 'Boca de Sapo'",
+      "ano": 1951,
+      "preco": 220000,
+      "franquiaId": 10,
+      "imagem": "https://placehold.co/600x400/219ebc/FFF?text=Chevy+3100",
+      "descricao": "Uma picape clássica americana, com um design frontal inconfundível. Peça de coleção."
+    },
+    {
+      "id": 30,
+      "marca": "Triumph",
+      "modelo": "Bonneville T120",
+      "ano": 1968,
+      "preco": 95000,
+      "franquiaId": 10,
+      "imagem": "https://placehold.co/600x400/023047/FFF?text=Triumph",
+      "descricao": "O ícone britânico do motociclismo. Um clássico atemporal amado por estrelas de cinema."
     }
   ]
 }

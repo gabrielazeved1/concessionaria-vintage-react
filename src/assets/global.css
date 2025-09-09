@@ -1,70 +1,99 @@
-/* === GERAL E TIPOGRAFIA === */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+/* ==========================================================================
+   CONFIGURAÇÃO GLOBAL E FONTES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-  --cor-fundo: #f8f5f2; /* Um bege/branco sujo */
-  --cor-texto: #333;
-  --cor-principal: #004d40; /* Verde-petróleo escuro */
-  --cor-acento: #00796b;   /* Verde-petróleo mais claro */
-  --cor-branco: #ffffff;
-  --sombra-subtil: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --sombra-forte: 0 8px 16px rgba(0, 0, 0, 0.12);
+  --primary-color: #2a9d8f;      /* Verde-petróleo para destaque */
+  --secondary-color: #264653;    /* Azul-escuro para texto e headers */
+  --background-color: #f8f5f1;   /* Um bege/branco-sujo para o fundo */
+  --card-background: #ffffff;     /* Branco puro para os cartões */
+  --text-color: #4A4A4A;         /* Cinzento-escuro para texto normal */
+  --border-color: #e0e0e0;       /* Cinzento-claro para bordas */
+  --shadow-color: rgba(0, 0, 0, 0.08);
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
+  background-color: var(--background-color);
+  color: var(--text-color);
   line-height: 1.6;
-}
-
-h1, h2 {
-  font-weight: 600;
 }
 
 main {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  min-height: calc(100vh - 180px); /* Garante que o footer fica em baixo */
 }
 
-/* === HEADER E FOOTER === */
-header, footer {
-  background-color: var(--cor-principal);
-  color: var(--cor-branco);
+h1, h2, h3 {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   HEADER E FOOTER
+   ========================================================================== */
+header {
+  background-color: var(--secondary-color);
+  color: white;
   padding: 1rem 2rem;
   text-align: center;
-}
-
-header {
-  box-shadow: var(--sombra-subtil);
+  box-shadow: 0 2px 10px var(--shadow-color);
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
 header h1 {
-    margin: 0;
+  color: white;
+  margin: 0;
+  font-size: 2rem;
+}
+
+header nav {
+  margin-top: 0.5rem;
 }
 
 header nav a {
-  color: var(--cor-branco);
+  color: white;
   margin: 0 1rem;
   text-decoration: none;
-  font-weight: 400;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
 }
 
 header nav a:hover {
-  color: #b2dfdb; /* Verde claro para hover */
+  color: var(--primary-color);
 }
 
 footer {
-  margin-top: 3rem;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  margin-top: 2rem;
 }
 
-/* === CARTÃO DE CARRO (CATÁLOGO E HOME) === */
+/* ==========================================================================
+   PÁGINA HOME E CATÁLOGO
+   ========================================================================== */
+.home-welcome {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.home-welcome a {
+  text-decoration: none;
+}
+
+.featured-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
 .car-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -72,20 +101,18 @@ footer {
 }
 
 .car-card {
-  border: none;
+  border: 1px solid var(--border-color);
   border-radius: 12px;
-  background-color: var(--cor-branco);
-  box-shadow: var(--sombra-subtil);
+  background-color: var(--card-background);
+  box-shadow: 0 4px 15px var(--shadow-color);
   text-align: center;
   overflow: hidden;
-  display: flex; /* Adicionado para layout flex */
-  flex-direction: column; /* Organiza os itens em coluna */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .car-card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--sombra-forte);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .car-card img {
@@ -94,206 +121,224 @@ footer {
   object-fit: cover;
 }
 
-.car-card-info {
+.card-content {
   padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Faz esta área crescer para preencher o espaço */
 }
 
-.car-card h2 {
+.card-content h2 {
   margin: 0.5rem 0;
   font-size: 1.5rem;
 }
 
-.car-card p {
-  color: #666;
-  margin-bottom: 1rem;
+.card-content p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
 }
 
-.car-card span {
+.card-content .price {
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--cor-principal);
+  color: var(--primary-color);
   display: block;
-  margin: 1rem 0;
-  flex-grow: 1; /* Empurra o botão para baixo */
+  margin: 1.2rem 0;
 }
 
-/* === BOTÕES E LINKS === */
-.details-button, .cta-button, .button-secondary {
-  display: inline-flex; /* Alterado para flex para alinhar ícone e texto */
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem; /* Espaço entre ícone e texto */
-  padding: 0.8rem 1.6rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease; /* Transição para todos os efeitos */
-}
-
-/* Estilo principal (verde) */
-.details-button, .cta-button {
-  background-color: var(--cor-acento);
-  color: var(--cor-branco);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* Estilo secundário (contorno) */
-.button-secondary {
-  background-color: #e0f2f1; /* Fundo verde claro */
-  color: var(--cor-acento);
-  border: 1px solid var(--cor-acento);
-}
-
-/* Efeitos de Hover */
-.details-button:hover, .cta-button:hover {
-  background-color: var(--cor-principal);
-  transform: translateY(-3px); /* Efeito de elevação */
-  box-shadow: var(--sombra-subtil);
-}
-
-.button-secondary:hover {
-  background-color: var(--cor-acento);
-  color: var(--cor-branco);
-  transform: translateY(-3px);
-  box-shadow: var(--sombra-subtil);
-}
-
-/* Efeito de Clique */
-.details-button:active, .cta-button:active, .button-secondary:active {
-  transform: translateY(-1px); /* Efeito de pressionar */
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-}
-
-
-/* === PÁGINA DE DETALHES === */
-.details-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-  background-color: var(--cor-branco);
-  padding: 3rem;
+/* ==========================================================================
+   PÁGINA DE DETALHES DO CARRO
+   ========================================================================== */
+.details-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: var(--card-background);
+  padding: 2rem;
   border-radius: 12px;
-  box-shadow: var(--sombra-forte);
+  box-shadow: 0 4px 15px var(--shadow-color);
 }
 
 .details-image {
+  flex: 1 1 500px;
+}
+
+.details-image img {
   width: 100%;
   border-radius: 8px;
 }
 
-.details-info h1 {
-  font-size: 2.8rem;
-  margin-top: 0;
+.details-info {
+  flex: 1 1 400px;
 }
+
+.details-info h1 {
+  margin-top: 0;
+  font-size: 2.5rem;
+}
+
 .details-info h2 {
-  font-weight: 300;
   font-size: 1.2rem;
-  color: #555;
-  margin-top: -1.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.details-info .price {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 2rem 0;
+}
+
+/* ==========================================================================
+   BOTÕES E LINKS
+   ========================================================================== */
+.button, .button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button:hover {
+  background-color: #238a7e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.button-secondary {
+  background-color: #e0e0e0;
+  color: var(--text-color);
+}
+
+.button-secondary:hover {
+  background-color: #d1d1d1;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   CALCULADORA DE FRETE E FILTROS
+   ========================================================================== */
+.filters-container {
+  background-color: var(--card-background);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
   margin-bottom: 2rem;
 }
 
-.details-price {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--cor-principal);
-  display: block;
-  margin-top: 2rem;
+.filters-container input,
+.filters-container select {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
 }
 
-
-/* === CALCULADORA DE FRETE E FILTROS === */
-.shipping-calculator, .filters-container {
-  background-color: var(--cor-branco);
+.shipping-calculator {
+  background-color: var(--card-background);
   padding: 2rem;
   border-radius: 12px;
   margin-top: 2rem;
-  box-shadow: var(--sombra-subtil);
+  box-shadow: 0 4px 15px var(--shadow-color);
 }
 
-.shipping-calculator h3, .catalogo-container h1 {
+.shipping-calculator h3 {
   margin-top: 0;
   text-align: center;
 }
 
 .form-group {
   display: flex;
-  gap: 1rem;
-  align-items: stretch; /* <-- Esta é a chave! Força os itens a terem a mesma altura */
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .form-group input {
   flex-grow: 1;
-  padding: 0.8rem; /* Igual ao padding vertical do botão */
-  border: 1px solid #ccc;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
   font-size: 1rem;
-  font-family: 'Poppins', sans-serif; /* Garante a mesma fonte */
+  height: 50px; /* Altura fixa */
+  box-sizing: border-box;
+}
+
+.form-group .button {
+  height: 50px; /* Mesma altura do input */
+  flex-shrink: 0;
 }
 
 .shipping-result {
   margin-top: 1.5rem;
   padding: 1rem;
-  background-color: #e0f2f1; /* Verde bem claro */
-  border-left: 5px solid var(--cor-acento);
+  background-color: #e3f2f0;
+  border-left: 4px solid var(--primary-color);
   border-radius: 4px;
 }
 
-.filters-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  align-items: center; /* Alinha verticalmente */
+.shipping-result p {
+  margin: 0.5rem 0;
 }
 
-.filters-container input,
-.filters-container select {
-  flex: 1;
-  min-width: 180px;
-  padding: 0.8rem; /* Aumenta a altura */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: #fff;
+.shipping-cost {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--secondary-color);
 }
 
-/* === PÁGINA HOME === */
-.hero-section {
-  padding: 5rem 2rem;
-  background-color: var(--cor-branco);
-  border-radius: 12px;
-  margin-bottom: 3rem;
-  box-shadow: var(--sombra-subtil);
-}
-
-.hero-section h1 {
-  font-size: 3rem;
-}
-
-.featured-cars h2 {
+.error-message {
+  color: #c0392b;
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2.2rem;
+  margin-top: 1rem;
 }
 
-/* === RESPONSIVIDADE === */
+/* Responsividade Básica */
 @media (max-width: 768px) {
-  .details-card {
-    grid-template-columns: 1fr;
-    padding: 1.5rem;
-    gap: 1.5rem;
+  .details-container {
+    flex-direction: column;
   }
-  .details-info h1 { font-size: 2rem; }
-  .details-price { font-size: 2rem; }
-  .form-group { flex-direction: column; }
+  .filters-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ==========================================================================
+   CORREÇÕES DE ESPECIFICIDADE
+   ========================================================================== */
+
+/* Garante que o link 'Ver Detalhes' dentro do cartão se pareça com um botão */
+.card-content .button {
+  color: white !important; /* Força o texto a ser branco */
+  text-decoration: none; /* Remove qualquer sublinhado */
 }
 

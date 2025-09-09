@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { api } from '../services/api';
 import { CarCard } from '../components/CarCard';
+import { Link } from 'react-router-dom'; // Precisamos de importar o Link
 
 export function Home() {
   const [featuredCars, setFeaturedCars] = useState([]);
@@ -9,32 +9,33 @@ export function Home() {
   useEffect(() => {
     async function fetchFeaturedCars() {
       try {
-        // Busca todos os carros e pega apenas os 3 primeiros com .slice(0, 3)
+        // Busca todos os carros e pega apenas os 3 primeiros como destaque
         const response = await api.get('/carros?_limit=3');
         setFeaturedCars(response.data);
       } catch (error) {
         console.error("Erro ao buscar carros em destaque:", error);
       }
     }
+
     fetchFeaturedCars();
   }, []);
 
   return (
-    <div className="home-container">
-      <section className="hero-section">
+    <div>
+      <div className="home-welcome">
         <h1>Encontre o Clássico dos Seus Sonhos</h1>
         <p>A maior coleção de carros antigos e raros do Brasil.</p>
-        <Link to="/catalogo" className="cta-button">Ver Catálogo Completo</Link>
-      </section>
+        {/* AQUI APLICAMOS A CLASSE "button" AO LINK */}
+        <Link to="/catalogo" className="button">Ver Catálogo Completo</Link>
+      </div>
 
-      <section className="featured-cars">
-        <h2>Nossos Destaques</h2>
-        <div className="car-list">
-          {featuredCars.map(carro => (
-            <CarCard key={carro.id} carro={carro} />
-          ))}
-        </div>
-      </section>
+      <h2 className="featured-title">Nossos Destaques</h2>
+      <div className="car-list">
+        {featuredCars.map(carro => (
+          <CarCard key={carro.id} carro={carro} />
+        ))}
+      </div>
     </div>
   );
 }
+

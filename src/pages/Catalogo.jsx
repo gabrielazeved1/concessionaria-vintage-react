@@ -3,24 +3,23 @@ import { api } from '../services/api';
 import { CarCard } from '../components/CarCard';
 
 export function Catalogo() {
-  const [allCars, setAllCars] = useState([]);
-  const [franchises, setFranchises] = useState([]);
+  const [carros, setCarros] = useState([]);
+  const [franquias, setFranquias] = useState([]);
   const [filters, setFilters] = useState({
-    search: '',
-    brand: '',
-    franchise: ''
+    searchTerm: '',
+    marca: 'all',
+    franquia: 'all',
   });
 
-  // Busca os dados iniciais
   useEffect(() => {
     async function fetchData() {
       try {
-        const [carsResponse, franchisesResponse] = await Promise.all([
+        const [carrosResponse, franquiasResponse] = await Promise.all([
           api.get('/carros'),
           api.get('/franquias')
         ]);
-        setAllCars(carsResponse.data);
-        setFranchises(franchisesResponse.data);
+        setCarros(carrosResponse.data);
+        setFranquias(franquiasResponse.data);
       } catch (error) {
         console.error("Erro ao buscar dados:", error);
       }
@@ -28,59 +27,68 @@ export function Catalogo() {
     fetchData();
   }, []);
 
-  // Calcula a lista de marcas únicas
-  const uniqueBrands = useMemo(() => {
-    const brands = allCars.map(car => car.marca);
-    return [...new Set(brands)];
-  }, [allCars]);
-
-  // Filtra os carros com base nos filtros selecionados
-  const filteredCars = useMemo(() => {
-    return allCars.filter(car => {
-      const searchMatch = car.modelo.toLowerCase().includes(filters.search.toLowerCase());
-      const brandMatch = filters.brand ? car.marca === filters.brand : true;
-      // CORREÇÃO: Usamos '==' para comparar o 'franquiaId' (número) com o valor do filtro (string)
-      const franchiseMatch = filters.franchise ? car.franquiaId == filters.franchise : true;
-      return searchMatch && brandMatch && franchiseMatch;
-    });
-  }, [allCars, filters]);
-
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleClearFilters = () => {
-    setFilters({ search: '', brand: '', franchise: '' });
+  const clearFilters = () => {
+    setFilters({
+      searchTerm: '',
+      marca: 'all',
+      franquia: 'all',
+    });
   };
 
-  return (
-    <div className="catalogo-container">
-      <h1>Catálogo de Carros</h1>
+  const uniqueMarcas = useMemo(() => {
+    const marcas = carros.map(carro => carro.marca);
+    return [...new Set(marcas)].sort();
+  }, [carros]);
 
+  const filteredCars = useMemo(() => {
+    return carros
+      .filter(carro => {
+        const searchTermMatch = carro.modelo.toLowerCase().includes(filters.searchTerm.toLowerCase());
+        const brandMatch = filters.marca === 'all' || carro.marca === filters.marca;
+        
+        // CORREÇÃO: Converte o valor do filtro para número antes de comparar
+        const franquiaMatch = filters.franquia === 'all' || carro.franquiaId === parseInt(filters.franquia, 10);
+        
+        return searchTermMatch && brandMatch && franquiaMatch;
+      });
+  }, [carros, filters]);
+
+  return (
+    <div>
+      <h1>Catálogo de Carros</h1>
       <div className="filters-container">
         <input
           type="text"
-          name="search"
+          name="searchTerm"
           placeholder="Pesquisar por modelo..."
-          value={filters.search}
+          value={filters.searchTerm}
           onChange={handleFilterChange}
         />
-        <select name="brand" value={filters.brand} onChange={handleFilterChange}>
-          <option value="">Todas as Marcas</option>
-          {uniqueBrands.map(brand => <option key={brand} value={brand}>{brand}</option>)}
+        <select name="marca" value={filters.marca} onChange={handleFilterChange}>
+          <option value="all">Todas as Marcas</option>
+          {uniqueMarcas.map(marca => (
+            <option key={marca} value={marca}>{marca}</option>
+          ))}
         </select>
-        <select name="franchise" value={filters.franchise} onChange={handleFilterChange}>
-          <option value="">Todas as Concessionárias</option>
-          {franchises.map(f => <option key={f.id} value={f.id}>{f.nome}</option>)}
+        <select name="franquia" value={filters.franquia} onChange={handleFilterChange}>
+          <option value="all">Todas as Concessionárias</option>
+          {franquias.map(franquia => (
+            <option key={franquia.id} value={franquia.id}>
+              {franquia.nome}
+            </option>
+          ))}
         </select>
-        {/* CORREÇÃO: Adicionada a classe e um ícone ao botão */}
-        <button onClick={handleClearFilters} className="button-secondary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <button onClick={clearFilters} className="button-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
           Limpar Filtros
         </button>
       </div>
-
+      
       {filteredCars.length > 0 ? (
         <div className="car-list">
           {filteredCars.map(carro => (
