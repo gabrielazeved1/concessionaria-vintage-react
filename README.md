@@ -12,15 +12,15 @@ Este projeto é uma aplicação web completa desenvolvida como parte da discipli
 ## Demonstração Visual
 
 ### 1. Página Inicial
-!(./images/foto1.png)
+![](/images/foto2.png)
 *A página inicial apresenta os destaques da coleção e convida o utilizador a explorar o catálogo.*
 
 ### 2. Catálogo com Filtros
-!(./images/foto2.png)
+![](/images/foto1.png)
 *O catálogo permite a pesquisa e filtragem dos veículos, facilitando a navegação do utilizador.*
 
 ### 3. Detalhes do Veículo e Cálculo de Frete
-!(./images/foto3.png)
+![](/images/foto3.png)
 *A página de detalhes exibe todas as informações do veículo e a funcionalidade de cálculo de frete baseada no CEP.*
 
 ## Tecnologias e Arquitetura
