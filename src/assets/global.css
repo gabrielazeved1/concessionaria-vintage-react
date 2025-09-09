@@ -1,210 +1,299 @@
-/* ESTILOS GLOBAIS E DE LAYOUT BÁSICO */
+/* === GERAL E TIPOGRAFIA === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --cor-fundo: #f8f5f2; /* Um bege/branco sujo */
+  --cor-texto: #333;
+  --cor-principal: #004d40; /* Verde-petróleo escuro */
+  --cor-acento: #00796b;   /* Verde-petróleo mais claro */
+  --cor-branco: #ffffff;
+  --sombra-subtil: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --sombra-forte: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
-  background-color: #f4f7f6;
-  color: #333;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
 }
 
-header, footer {
-  background-color: #264653; /* Azul escuro */
-  color: white;
-  padding: 1rem 2rem;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-header nav a {
-  color: white;
-  margin: 0 1rem;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.2s;
-}
-
-header nav a:hover {
-  color: #e9c46a; /* Amarelo queimado */
+h1, h2 {
+  font-weight: 600;
 }
 
 main {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: calc(100vh - 200px); /* Garante que o footer fique em baixo */
 }
 
-h1 {
-  color: #264653;
+/* === HEADER E FOOTER === */
+header, footer {
+  background-color: var(--cor-principal);
+  color: var(--cor-branco);
+  padding: 1rem 2rem;
+  text-align: center;
 }
 
-/* ESTILOS DA PÁGINA DE CATÁLOGO */
+header {
+  box-shadow: var(--sombra-subtil);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav a {
+  color: var(--cor-branco);
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: #b2dfdb; /* Verde claro para hover */
+}
+
+footer {
+  margin-top: 3rem;
+}
+
+/* === CARTÃO DE CARRO (CATÁLOGO E HOME) === */
 .car-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
 }
 
 .car-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: none;
+  border-radius: 12px;
+  background-color: var(--cor-branco);
+  box-shadow: var(--sombra-subtil);
   text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+  display: flex; /* Adicionado para layout flex */
+  flex-direction: column; /* Organiza os itens em coluna */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .car-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  box-shadow: var(--sombra-forte);
 }
 
 .car-card img {
-  max-width: 100%;
-  height: 200px;
+  width: 100%;
+  height: 220px;
   object-fit: cover;
-  border-radius: 4px;
+}
+
+.car-card-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Faz esta área crescer para preencher o espaço */
 }
 
 .car-card h2 {
   margin: 0.5rem 0;
-  color: #333;
-}
-
-.car-card span {
   font-size: 1.5rem;
-  font-weight: bold;
-  color: #2a9d8f; /* Verde-azulado */
-  display: block;
-  margin: 1rem 0;
 }
 
-/* ESTILO DO BOTÃO/LINK "VER DETALHES" */
-.details-button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  background-color: #333;
-  color: white !important;
-  text-decoration: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  font-family: sans-serif;
-  font-size: 14px;
-}
-
-.details-button:hover {
-  background-color: #555;
-}
-
-/* ESTILOS DA PÁGINA DE DETALHES DO CARRO */
-.detalhes-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  background-color: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.detalhes-container img {
-  width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.detalhes-container .info h2 {
-  font-size: 1.2rem;
-  color: #555;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 1rem;
+.car-card p {
+  color: #666;
   margin-bottom: 1rem;
 }
 
-.detalhes-container .info p {
-  line-height: 1.8;
-}
-
-.detalhes-container .preco {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #2a9d8f;
+.car-card span {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--cor-principal);
   display: block;
-  margin-top: 1.5rem;
+  margin: 1rem 0;
+  flex-grow: 1; /* Empurra o botão para baixo */
 }
 
-/* ESTILOS PARA O COMPONENTE DA CALCULADORA DE FRETE */
-.shipping-container {
-  background-color: white;
-  padding: 2rem;
+/* === BOTÕES E LINKS === */
+.details-button, .cta-button, .button-secondary {
+  display: inline-flex; /* Alterado para flex para alinhar ícone e texto */
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Espaço entre ícone e texto */
+  padding: 0.8rem 1.6rem;
+  border: none;
   border-radius: 8px;
-  margin-top: 2rem;
-  border: 1px solid #eee;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease; /* Transição para todos os efeitos */
 }
 
-.shipping-container h3 {
+/* Estilo principal (verde) */
+.details-button, .cta-button {
+  background-color: var(--cor-acento);
+  color: var(--cor-branco);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Estilo secundário (contorno) */
+.button-secondary {
+  background-color: #e0f2f1; /* Fundo verde claro */
+  color: var(--cor-acento);
+  border: 1px solid var(--cor-acento);
+}
+
+/* Efeitos de Hover */
+.details-button:hover, .cta-button:hover {
+  background-color: var(--cor-principal);
+  transform: translateY(-3px); /* Efeito de elevação */
+  box-shadow: var(--sombra-subtil);
+}
+
+.button-secondary:hover {
+  background-color: var(--cor-acento);
+  color: var(--cor-branco);
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-subtil);
+}
+
+/* Efeito de Clique */
+.details-button:active, .cta-button:active, .button-secondary:active {
+  transform: translateY(-1px); /* Efeito de pressionar */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+
+/* === PÁGINA DE DETALHES === */
+.details-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  background-color: var(--cor-branco);
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: var(--sombra-forte);
+}
+
+.details-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.details-info h1 {
+  font-size: 2.8rem;
   margin-top: 0;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 1rem;
-  margin-bottom: 1.5rem;
+}
+.details-info h2 {
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
 }
 
-.cep-input-group {
+.details-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--cor-principal);
+  display: block;
+  margin-top: 2rem;
+}
+
+
+/* === CALCULADORA DE FRETE E FILTROS === */
+.shipping-calculator, .filters-container {
+  background-color: var(--cor-branco);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  box-shadow: var(--sombra-subtil);
+}
+
+.shipping-calculator h3, .catalogo-container h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.form-group {
   display: flex;
   gap: 1rem;
+  align-items: stretch; /* <-- Esta é a chave! Força os itens a terem a mesma altura */
 }
 
-.cep-input-group input {
+.form-group input {
   flex-grow: 1;
-  padding: 0.75rem;
+  padding: 0.8rem; /* Igual ao padding vertical do botão */
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 1rem;
+  font-family: 'Poppins', sans-serif; /* Garante a mesma fonte */
 }
 
-.cep-input-group button {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  background-color: #2a9d8f;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.cep-input-group button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-.cep-input-group button:hover:not(:disabled) {
-  background-color: #264653;
-}
-
-.error-message {
-  color: #e76f51;
-  font-weight: bold;
-  margin-top: 1rem;
-}
-
-.address-details {
+.shipping-result {
   margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #eee;
+  padding: 1rem;
+  background-color: #e0f2f1; /* Verde bem claro */
+  border-left: 5px solid var(--cor-acento);
+  border-radius: 4px;
 }
 
-.address-details p {
-  margin: 0.5rem 0;
-  line-height: 1.6;
+.filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  align-items: center; /* Alinha verticalmente */
 }
 
-.shipping-cost {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #2a9d8f;
-  margin-top: 1rem !important;
+.filters-container input,
+.filters-container select {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.8rem; /* Aumenta a altura */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+/* === PÁGINA HOME === */
+.hero-section {
+  padding: 5rem 2rem;
+  background-color: var(--cor-branco);
+  border-radius: 12px;
+  margin-bottom: 3rem;
+  box-shadow: var(--sombra-subtil);
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+}
+
+.featured-cars h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+  .details-card {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  .details-info h1 { font-size: 2rem; }
+  .details-price { font-size: 2rem; }
+  .form-group { flex-direction: column; }
 }
 

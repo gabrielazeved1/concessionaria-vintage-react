@@ -6,61 +6,66 @@ import { ShippingCalculator } from '../components/ShippingCalculator';
 export function CarroDetalhes() {
   const { id } = useParams();
   const [carro, setCarro] = useState(null);
-  const [franquia, setFranquia] = useState(null); // Estado para a franquia
+  const [franquia, setFranquia] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchCarroEFranquia() {
+    async function fetchCarDetails() {
       try {
-        // 1. Busca o carro
+        setLoading(true);
+        // Passo 1: Busca os dados do carro
         const carroResponse = await api.get(`/carros/${id}`);
-        setCarro(carroResponse.data);
+        const carroData = carroResponse.data;
+        setCarro(carroData);
 
-        // 2. Se o carro tiver uma franquia, busca os detalhes dela
-        if (carroResponse.data.franquia) {
-          const franquiaResponse = await api.get(`/franquias/${carroResponse.data.franquia}`);
+        // Passo 2: Se o carro foi encontrado e tem um franquiaId, busca os dados da franquia
+        if (carroData && carroData.franquiaId) {
+          const franquiaResponse = await api.get(`/franquias/${carroData.franquiaId}`);
           setFranquia(franquiaResponse.data);
         }
       } catch (error) {
-        console.error("Erro ao buscar detalhes:", error);
+        console.error("Erro ao buscar detalhes do carro:", error);
       } finally {
         setLoading(false);
       }
     }
-    fetchCarroEFranquia();
+
+    fetchCarDetails();
   }, [id]);
 
   if (loading) {
-    return <h1>A carregar...</h1>;
+    return <h2>A carregar...</h2>;
   }
 
   if (!carro) {
-    return <h1>Carro não encontrado!</h1>
+    return <h2>Carro não encontrado!</h2>;
   }
 
   return (
-    <>
-      <div className="detalhes-container">
-        <img src={carro.imagem} alt={`Foto do ${carro.modelo}`} />
-        <div className="info">
+    <div className="car-details-page">
+      <div className="details-card">
+        <img src={carro.imagem} alt={`Foto do ${carro.modelo}`} className="details-image" />
+        <div className="details-info">
           <h1>{carro.modelo}</h1>
           <h2>
             {carro.marca} - {carro.ano}
-            {/* Agora lê os dados da franquia do seu próprio estado */}
-            {franquia && ` | Origem: ${franquia.cidade}`}
+            {franquia && ` | Origem: ${franquia.cidade}`} {/* Mostra a cidade da franquia */}
           </h2>
           <p>{carro.descricao}</p>
-          <span className="preco">
-            {new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(carro.preco)}
+          <span className="details-price">
+            {new Intl.NumberFormat('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
+            }).format(carro.preco)}
           </span>
         </div>
       </div>
 
-      {/* Passa o estado da franquia para a calculadora */}
+      {/* A calculadora só aparece se tivermos os dados da franquia */}
       {franquia && (
         <ShippingCalculator originState={franquia.estado} />
       )}
-    </>
+    </div>
   );
 }
 
