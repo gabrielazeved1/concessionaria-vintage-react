@@ -1,0 +1,54 @@
+{
+  "franquias": [
+    {
+      "id": 1,
+      "nome": "Clássicos de São Paulo",
+      "cidade": "São Paulo",
+      "estado": "SP"
+    },
+    {
+      "id": 2,
+      "nome": "Relíquias do Rio",
+      "cidade": "Rio de Janeiro",
+      "estado": "RJ"
+    },
+    {
+      "id": 3,
+      "nome": "Joias de Minas",
+      "cidade": "Belo Horizonte",
+      "estado": "MG"
+    }
+  ],
+  "carros": [
+    {
+      "id": 1,
+      "marca": "Ford",
+      "modelo": "Mustang Boss 429",
+      "ano": 1969,
+      "preco": 950000,
+      "franquiaId": 1,
+      "imagem": "https://exemplo.com/mustang.jpg",
+      "descricao": "Um ícone americano com um motor V8 monstruoso. Totalmente restaurado."
+    },
+    {
+      "id": 2,
+      "marca": "Chevrolet",
+      "modelo": "Opala SS",
+      "ano": 1976,
+      "preco": 150000,
+      "franquiaId": 3,
+      "imagem": "https://exemplo.com/opala.jpg",
+      "descricao": "O lendário Opala na sua versão esportiva SS. Motor 6 cilindros 4100."
+    },
+    {
+      "id": 3,
+      "marca": "Volkswagen",
+      "modelo": "Karmann-Ghia",
+      "ano": 1968,
+      "preco": 120000,
+      "franquiaId": 2,
+      "imagem": "https://exemplo.com/karmannghia.jpg",
+      "descricao": "Design alemão com alma brasileira. Um dos carros mais bonitos já feitos."
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+/* src/assets/global.css */
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+header, footer {
+  background-color: #333;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+header nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.car-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.car-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.car-card img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.car-card h2 {
+  margin: 0.5rem 0;
+}
+
+.car-card span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2a9d8f;
+  display: block;
+  margin: 1rem 0;
+}
+
+.car-card button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.car-card button:hover {
+  background-color: #555;
+}
+.details-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background-color: #333;
+  color: white !important; /* Adicionado !important para garantir que a cor seja branca */
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+.details-button:hover {
+  background-color: #555;
+}
+.detalhes-container {
+  display: flex;
+  gap: 2rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.detalhes-container img {
+  max-width: 50%;
+  border-radius: 8px;
+}
+
+.detalhes-container .info .preco {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2a9d8f;
+  display: block;
+  margin-top: 1.5rem;
+}
