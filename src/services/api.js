@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-// Cria uma instância do axios com a URL base da nossa API
+// cria uma instancia do axios com a url base da nossa Api
+// axios é quem conversa com o backend
 export const api = axios.create({
   baseURL: 'http://localhost:3001'
 });
