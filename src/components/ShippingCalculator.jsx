@@ -109,7 +109,7 @@ export function ShippingCalculator({ originState, onFreteCalculado }) {
     }
   };
 
-  // esta é a parte visual do componente (o que aparece na tela)
+  // chamada da tela
   return (
     <div className="shipping-calculator">
       <h3>Calcular Frete e Prazo de Entrega</h3>

@@ -11,11 +11,11 @@ services:
       - "5173:5173"
     
     volumes:
-      # espelha a pasta inteira do projeto para dentro do contentor
+      # espelha a pasta inteira do projeto para dentro do container
       # é isto que permite o 'live reload' do codigo -> alteracao rapidao 
       - .:/app
       - /app/node_modules
-    # define variaveis de ambiente dentro do contentor
+    # define variaveis de ambiente dentro do container
     environment:
       # esta variavel é necessaria para que o vite detete alteracoes de ficheiros no docker
       - CHOKIDAR_USEPOLLING=true
@@ -25,14 +25,14 @@ services:
   api:
     # usa uma imagem pronta do node.js, sem precisar de um dockerfile
     image: node:20-alpine
-    # o comando que sera executado quando o contentor iniciar
+    # o comando que sera executado quando o container iniciar
     command: npx json-server --watch db.json --host 0.0.0.0 --port 3001
-    # mapeia a porta 3001 da sua maquina para a porta 3001 do contentor
+    # mapeia a porta 3001 da sua maquina para a porta 3001 do container
     ports:
       - "3001:3001"
     # espelha o ficheiro db.json para que a api veja as alteracoes nos dados
     volumes:
       - ./db.json:/app/db.json
-    # define o diretorio de trabalho dentro do contentor da api
+    # define o diretorio de trabalho dentro do container da api
     working_dir: /app
 
