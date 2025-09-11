@@ -1,30 +1,38 @@
+#define servicos
 services:
-  # Serviço 1: A sua aplicação React (Frontend)
   client:
+    # crie a imagem a partir disso: 
     build:
+      #contexto = pasta que tem docker file
       context: .
       dockerfile: Dockerfile.dev
+    # mapeia a porta 5173 da sua maquina para a porta 5173 do conteiner
     ports:
-      # Mapeia a porta 5173 da sua máquina para a porta 5173 do contentor
       - "5173:5173"
+    
     volumes:
-      # Partilha a pasta inteira do projeto com o contentor...
+      # espelha a pasta inteira do projeto para dentro do contentor
+      # é isto que permite o 'live reload' do codigo -> alteracao rapidao 
       - .:/app
-      # ...mas usa um volume anónimo para o node_modules, para que a
-      # pasta do contentor não seja sobreposta pela do seu computador.
       - /app/node_modules
+    # define variaveis de ambiente dentro do contentor
     environment:
-      # Garante que o Vite detete as alterações de ficheiros dentro do Docker
+      # esta variavel é necessaria para que o vite detete alteracoes de ficheiros no docker
       - CHOKIDAR_USEPOLLING=true
 
-  # Serviço 2: A sua API falsa com json-server
+
+  # este é o servico para a nossa api falsa (json-server)
   api:
+    # usa uma imagem pronta do node.js, sem precisar de um dockerfile
     image: node:20-alpine
+    # o comando que sera executado quando o contentor iniciar
     command: npx json-server --watch db.json --host 0.0.0.0 --port 3001
+    # mapeia a porta 3001 da sua maquina para a porta 3001 do contentor
     ports:
       - "3001:3001"
+    # espelha o ficheiro db.json para que a api veja as alteracoes nos dados
     volumes:
       - ./db.json:/app/db.json
+    # define o diretorio de trabalho dentro do contentor da api
     working_dir: /app
-
 

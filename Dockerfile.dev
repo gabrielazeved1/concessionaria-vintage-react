@@ -1,17 +1,18 @@
-# Use an official Node.js runtime as a parent image
+# define a imagem base do container 
 FROM node:20-alpine
 
-# Set the working directory in the container
+# define o diretorio de trabalho padrao dentro do contentor
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
+# copia os ficheiros de dependencias para dentro do contentor
 COPY package*.json ./
 
-# Install project dependencies
+# executa o comando para instalar as dependencias do projeto
 RUN npm install
 
-# Your app binds to port 5173 inside the container
+# informa ao docker que o contentor vai expor a porta 5173
 EXPOSE 5173
 
-# Command to run the app in development mode
+# define o comando padrao que sera executado quando o container iniciar
 CMD ["npm", "run", "dev"]
+
