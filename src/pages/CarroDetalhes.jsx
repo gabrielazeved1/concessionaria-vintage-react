@@ -19,7 +19,7 @@ export function CarroDetalhes() {
     const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     localStorage.setItem('carrinho', JSON.stringify([...carrinho, item]));
     navigate('/carrinho');
-}
+  }
 
   useEffect(() => {
     async function fetchCarDetails() {
@@ -75,13 +75,13 @@ export function CarroDetalhes() {
 
       {/* A calculadora só aparece se tivermos os dados da franquia */}
       {franquia && (
-        <ShippingCalculator originState={franquia.estado} 
-        onFreteCalculado={setFreteCalculado}
+        <ShippingCalculator originState={franquia.estado}
+          onFreteCalculado={setFreteCalculado}
         />
       )}
 
-      <button className="cart-button" onClick={handleAddToCart}
-      disabled={freteCalculado === null}
+      <button className="button add-margin-top" onClick={handleAddToCart}
+        disabled={freteCalculado === null}
       >
         Adicionar ao Carrinho
       </button>

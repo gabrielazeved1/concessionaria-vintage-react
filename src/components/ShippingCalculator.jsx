@@ -38,7 +38,7 @@ export function calculateShipping(originState, destinationState) {
   return DEFAULT_NATIONAL_RATE;
 }
 
-export function ShippingCalculator({ originState }) {
+export function ShippingCalculator({ originState, onFreteCalculado }) {
   const [cep, setCep] = useState('');
   const [shippingInfo, setShippingInfo] = useState(null);
   const [error, setError] = useState('');
