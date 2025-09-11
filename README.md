@@ -49,6 +49,7 @@ O projeto está organizado de forma a separar as responsabilidades, seguindo as 
 │   │   ├── Header.jsx          # Componente do cabeçalho, com o título e a navegação.
 │   │   └── ShippingCalculator.jsx # Componente com a lógica do cálculo de frete.
 │   ├── pages/
+|   |   ├── Carrinho.jsx        # Página do carrinho, com valor total dos carros e frete.
 │   │   ├── CarroDetalhes.jsx   # Página que exibe os detalhes de um veículo específico.
 │   │   ├── Catalogo.jsx        # Página do catálogo, com a lógica de busca e filtros.
 │   │   └── Home.jsx            # Página inicial da aplicação com os destaques.
