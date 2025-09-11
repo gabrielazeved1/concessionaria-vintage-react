@@ -7,7 +7,7 @@ export function CarCard({ carro }) {
       <img src={carro.imagem} alt={`Foto do ${carro.modelo}`} />
       <div className="card-content">
         <h2>{carro.modelo}</h2>
-        <p>{carro.marca} - {carro.ano}</p>
+        <p>{carro.marca} - {carro.ano} | {carro.cidade}</p>
         <span className="price">
           {new Intl.NumberFormat('pt-BR', {
             style: 'currency',

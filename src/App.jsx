@@ -4,6 +4,7 @@ import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
 import { Catalogo } from './pages/Catalogo';
 import { CarroDetalhes } from './pages/CarroDetalhes';
+import { Carrinho } from './pages/Carrinho';
 
 // Componente de Layout que define a estrutura da página
 function MainLayout() {
@@ -30,6 +31,7 @@ function App() {
         {/* A página de catálogo */}
         <Route path="catalogo" element={<Catalogo />} />
         {/* A página de detalhes de um carro específico */}
+        <Route path="carrinho" element={<Carrinho />} />
         <Route path="carro/:id" element={<CarroDetalhes />} />
       </Route>
     </Routes>

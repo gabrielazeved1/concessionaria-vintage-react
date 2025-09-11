@@ -69,7 +69,7 @@
       "ano": 1969,
       "preco": 950000,
       "franquiaId": 1,
-      "imagem": "https://placehold.co/600x400/264653/FFF?text=Mustang",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Leimershof_7._US-Car-Treffen_Ford_Mustang_Boss_429-20230909-RM-170329.jpg/640px-Leimershof_7._US-Car-Treffen_Ford_Mustang_Boss_429-20230909-RM-170329.jpg",
       "descricao": "Um ícone americano com um motor V8 monstruoso. Totalmente restaurado."
     },
     {
@@ -79,7 +79,7 @@
       "ano": 1974,
       "preco": 250000,
       "franquiaId": 1,
-      "imagem": "https://placehold.co/600x400/2a9d8f/FFF?text=Maverick",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/1974_Brazilian_Ford_Maverick_GT_%28Four-Barrel%29.jpg/640px-1974_Brazilian_Ford_Maverick_GT_%28Four-Barrel%29.jpg",
       "descricao": "O 'muscle car' brasileiro por excelência. Versão GT V8, o sonho de uma geração."
     },
     {
@@ -88,8 +88,8 @@
       "modelo": "GTS Conversível",
       "ano": 1978,
       "preco": 95000,
-      "franquiaId": 1,
-      "imagem": "https://placehold.co/600x400/e9c46a/000?text=Puma+GTS",
+      "franquiaId": 3,
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Puma_GTS_1980_%2814558408447%29.jpg/640px-Puma_GTS_1980_%2814558408447%29.jpg",
       "descricao": "Charme e esportividade nacional com carroceria de fibra e mecânica VW."
     },
     {
@@ -99,7 +99,7 @@
       "ano": 1968,
       "preco": 120000,
       "franquiaId": 2,
-      "imagem": "https://placehold.co/600x400/f4a261/FFF?text=Karmann-Ghia",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/VW_Karmann_Ghia_1969%2C_re._Seite_%282017-07-02_Sp%29.JPG/640px-VW_Karmann_Ghia_1969%2C_re._Seite_%282017-07-02_Sp%29.JPG",
       "descricao": "Design alemão com alma brasileira. Um dos carros mais bonitos já feitos."
     },
     {
@@ -109,7 +109,7 @@
       "ano": 1966,
       "preco": 180000,
       "franquiaId": 2,
-      "imagem": "https://placehold.co/600x400/e76f51/FFF?text=Interlagos",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Willys_Interlagos_%281964%29%2C_Paris_Motor_Show_2018%2C_IMG_0471.jpg/640px-Willys_Interlagos_%281964%29%2C_Paris_Motor_Show_2018%2C_IMG_0471.jpg",
       "descricao": "O primeiro carro esporte do Brasil, baseado no Renault Alpine A108."
     },
     {
@@ -119,7 +119,7 @@
       "ano": 1972,
       "preco": 85000,
       "franquiaId": 2,
-      "imagem": "https://placehold.co/600x400/d62828/FFF?text=Moto+Guzzi",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Moto_Guzzi_V_7_Sport_1972.jpg/640px-Moto_Guzzi_V_7_Sport_1972.jpg",
       "descricao": "Uma moto italiana clássica, famosa pelo seu motor V-Twin transversal e estilo café racer."
     },
     {
@@ -129,7 +129,7 @@
       "ano": 1976,
       "preco": 150000,
       "franquiaId": 3,
-      "imagem": "https://placehold.co/600x400/003049/FFF?text=Opala+SS",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chevrolet_Opala_SS_1978_Inca.jpg/640px-Chevrolet_Opala_SS_1978_Inca.jpg",
       "descricao": "O lendário Opala na sua versão esportiva SS. Motor 6 cilindros 4100."
     },
     {
@@ -139,7 +139,7 @@
       "ano": 1975,
       "preco": 350000,
       "franquiaId": 3,
-      "imagem": "https://placehold.co/600x400/669bbc/FFF?text=Charger+R/T",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/1975_Chrysler_Valiant_VJ_Charger_770_E55_%2837414436182%29.jpg/640px-1975_Chrysler_Valiant_VJ_Charger_770_E55_%2837414436182%29.jpg",
       "descricao": "O mais potente 'muscle car' nacional da sua época. Pura força e estilo."
     },
     {
@@ -149,7 +149,7 @@
       "ano": 1980,
       "preco": 45000,
       "franquiaId": 3,
-      "imagem": "https://placehold.co/600x400/fdf0d5/000?text=Fiat+147",
+      "imagem": "https://cloudfront-us-east-1.images.arcpublishing.com/estadao/UD5NPNHURVNSXI6WQVGNXIS6UE.jpg",
       "descricao": "Versão apimentada do pequeno notável que revolucionou o mercado brasileiro."
     },
     {
@@ -159,7 +159,7 @@
       "ano": 1996,
       "preco": 55000,
       "franquiaId": 4,
-      "imagem": "https://placehold.co/600x400/c1121f/FFF?text=Fusca",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/11.05.2022-Lula_na_UFJF-Fusca_Itamar_-_52344287072.jpg/640px-11.05.2022-Lula_na_UFJF-Fusca_Itamar_-_52344287072.jpg",
       "descricao": "O último da sua espécie. A série final do amado Fusca no Brasil."
     },
     {
@@ -169,7 +169,7 @@
       "ano": 1988,
       "preco": 65000,
       "franquiaId": 4,
-      "imagem": "https://placehold.co/600x400/000000/FFF?text=Caravan",
+      "imagem": "https://www.pastorecc.com.br/site/photos/cars/314/bg_12469571685283bb0132021.JPG",
       "descricao": "A perua do Opala, combinando espaço, conforto e o poderoso motor de 6 cilindros."
     },
     {
@@ -179,7 +179,7 @@
       "ano": 1974,
       "preco": 90000,
       "franquiaId": 4,
-      "imagem": "https://placehold.co/600x400/780000/FFF?text=CB+750",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/CBX750_Lon.jpg/640px-CBX750_Lon.jpg",
       "descricao": "Considerada a primeira superbike moderna. Uma lenda de 4 cilindros."
     },
     {
@@ -189,7 +189,7 @@
       "ano": 1979,
       "preco": 30000,
       "franquiaId": 5,
-      "imagem": "https://placehold.co/600x400/fca311/FFF?text=Brasilia",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/VW_Brasilia.jpg/640px-VW_Brasilia.jpg",
       "descricao": "Design 100% nacional, um sucesso de vendas com muito espaço interno."
     },
     {
@@ -199,7 +199,7 @@
       "ano": 1971,
       "preco": 70000,
       "franquiaId": 5,
-      "imagem": "https://placehold.co/600x400/14213d/FFF?text=Corcel+GT",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Ford_Corcel_GT_1974_%2814764737923%29_%28cropped%29.jpg/640px-Ford_Corcel_GT_1974_%2814764737923%29_%28cropped%29.jpg",
       "descricao": "Versão esportiva do robusto Corcel, com faixas e visual agressivo."
     },
     {
@@ -209,7 +209,7 @@
       "ano": 1988,
       "preco": 75000,
       "franquiaId": 5,
-      "imagem": "https://placehold.co/600x400/e5e5e5/000?text=RD+350LC",
+      "imagem": "https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202507/20250731/yamaha-rd-350-lc-wmimagem11104301420.webp",
       "descricao": "Uma moto 2 tempos notoriamente rápida e emocionante. Para pilotos experientes."
     },
     {
@@ -219,7 +219,7 @@
       "ano": 1973,
       "preco": 160000,
       "franquiaId": 6,
-      "imagem": "https://placehold.co/600x400/ffb703/000?text=VW+SP2",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Volkswagen_SP2_June_2017_02.jpg/640px-Volkswagen_SP2_June_2017_02.jpg",
       "descricao": "Considerado um dos VW mais bonitos já feitos, com design esportivo e exclusivo."
     },
     {
@@ -229,7 +229,7 @@
       "ano": 1981,
       "preco": 80000,
       "franquiaId": 6,
-      "imagem": "https://placehold.co/600x400/fb8500/FFF?text=Alfa+Romeo",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Alfa_2300_ti_1979_at_night.jpg/640px-Alfa_2300_ti_1979_at_night.jpg",
       "descricao": "Um sedã de luxo com DNA esportivo italiano e fabricação nacional."
     },
     {
@@ -239,7 +239,7 @@
       "ano": 1985,
       "preco": 35000,
       "franquiaId": 6,
-      "imagem": "https://placehold.co/600x400/8ecae6/000?text=Vespa",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Vespa_PX_200_Millennium_2003.jpg/640px-Vespa_PX_200_Millennium_2003.jpg",
       "descricao": "A scooter mais icônica do mundo. Estilo, praticidade e charme atemporal."
     },
     {
@@ -249,7 +249,7 @@
       "ano": 1977,
       "preco": 50000,
       "franquiaId": 7,
-      "imagem": "https://placehold.co/600x400/219ebc/FFF?text=Chevette+GP",
+      "imagem": "https://www.pastorecc.com.br/site/photos/cars/542/bg_138463888953b69c3ca86ac.JPG",
       "descricao": "Série especial esportiva em homenagem ao Grande Prêmio do Brasil de F1."
     },
     {
@@ -259,7 +259,7 @@
       "ano": 1990,
       "preco": 60000,
       "franquiaId": 7,
-      "imagem": "https://placehold.co/600x400/023047/FFF?text=Escort+XR3",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/1988_Ford_Escort_XR3_Injection_1.6.jpg/640px-1988_Ford_Escort_XR3_Injection_1.6.jpg",
       "descricao": "O sonho dos jovens nos anos 80 e 90. Versão conversível, um ícone."
     },
     {
@@ -269,7 +269,7 @@
       "ano": 1964,
       "preco": 40000,
       "franquiaId": 7,
-      "imagem": "https://placehold.co/600x400/ffb703/000?text=Lambretta",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Lambretta_Li_150_Series_3_-_Flickr_-_mick_-_Lumix.jpg/640px-Lambretta_Li_150_Series_3_-_Flickr_-_mick_-_Lumix.jpg",
       "descricao": "A grande rival da Vespa, com um design e engenharia únicos. Um clássico."
     },
     {
@@ -279,7 +279,7 @@
       "ano": 1975,
       "preco": 85000,
       "franquiaId": 8,
-      "imagem": "https://placehold.co/600x400/fb8500/FFF?text=Kombi",
+      "imagem": "https://cdn.autopapo.com.br/box/uploads/2021/02/05134448/frente-de-kombi-1965-azul-marinho-restaurada-em-2019.jpg",
       "descricao": "A primeira geração da amada 'Velha Senhora'. Símbolo de liberdade."
     },
     {
@@ -289,7 +289,7 @@
       "ano": 1985,
       "preco": 38000,
       "franquiaId": 8,
-      "imagem": "https://placehold.co/600x400/8ecae6/000?text=Gurgel",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Gurgel_X-12_Tocantins.jpg/640px-Gurgel_X-12_Tocantins.jpg",
       "descricao": "Um valente utilitário nacional, com mecânica VW e carroceria de 'Plasteel'."
     },
     {
@@ -299,7 +299,7 @@
       "ano": 1979,
       "preco": 68000,
       "franquiaId": 8,
-      "imagem": "https://placehold.co/600x400/219ebc/FFF?text=Harley",
+      "imagem": "https://anthonygodin.co.uk/wp-content/uploads/2024/07/IMG_7452.jpeg",
       "descricao": "O som inconfundível do motor 'Ironhead'. Uma moto com atitude e história."
     },
     {
@@ -309,7 +309,7 @@
       "ano": 1965,
       "preco": 110000,
       "franquiaId": 9,
-      "imagem": "https://placehold.co/600x400/023047/FFF?text=Simca",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/1959_Simca_Vedette_Chambord_Saloon_%2823301862599%29.jpg/640px-1959_Simca_Vedette_Chambord_Saloon_%2823301862599%29.jpg",
       "descricao": "Luxo e opulência dos anos 60, com seu motor V8 e design 'rabo de peixe'."
     },
     {
@@ -319,7 +319,7 @@
       "ano": 1968,
       "preco": 98000,
       "franquiaId": 9,
-      "imagem": "https://placehold.co/600x400/ffb703/000?text=FNM+JK",
+      "imagem": "https://autoentusiastas.com.br/ae/wp-content/uploads/2016/03/jk1a.jpg",
       "descricao": "O 'Fenemê', um sedã imponente e robusto com motor Alfa Romeo."
     },
     {
@@ -329,7 +329,7 @@
       "ano": 1971,
       "preco": 82000,
       "franquiaId": 9,
-      "imagem": "https://placehold.co/600x400/fb8500/FFF?text=BMW+R75",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/BMW_R75-5_r_TCE.jpg/640px-BMW_R75-5_r_TCE.jpg",
       "descricao": "Engenharia alemã clássica com o famoso motor boxer. Confiável e estilosa."
     },
     {
@@ -339,7 +339,7 @@
       "ano": 1983,
       "preco": 72000,
       "franquiaId": 10,
-      "imagem": "https://placehold.co/600x400/8ecae6/000?text=Miura",
+      "imagem": "https://quatrorodas.abril.com.br/wp-content/uploads/2020/10/Miura-Targa-4.jpg?quality=70&strip=info",
       "descricao": "Um fora-de-série gaúcho com design arrojado e tecnologia à frente do seu tempo."
     },
     {
@@ -349,7 +349,7 @@
       "ano": 1951,
       "preco": 220000,
       "franquiaId": 10,
-      "imagem": "https://placehold.co/600x400/219ebc/FFF?text=Chevy+3100",
+      "imagem": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/%2754_%28%3F%29_Chevrolet_3100_Pickup_in_Lower_Saxony_%282024%29.jpg/640px-%2754_%28%3F%29_Chevrolet_3100_Pickup_in_Lower_Saxony_%282024%29.jpg",
       "descricao": "Uma picape clássica americana, com um design frontal inconfundível. Peça de coleção."
     },
     {
@@ -359,9 +359,8 @@
       "ano": 1968,
       "preco": 95000,
       "franquiaId": 10,
-      "imagem": "https://placehold.co/600x400/023047/FFF?text=Triumph",
+      "imagem": "https://www.mcnews.com.au/wp-content/uploads/2023/05/1968-Triumph-Bonnieville-1024x701.jpg",
       "descricao": "O ícone britânico do motociclismo. Um clássico atemporal amado por estrelas de cinema."
     }
   ]
 }
-

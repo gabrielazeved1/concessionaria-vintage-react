@@ -1,13 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { api } from '../services/api';
-import { ShippingCalculator } from '../components/ShippingCalculator';
+import { ShippingCalculator, calculateShipping } from '../components/ShippingCalculator';
 
 export function CarroDetalhes() {
   const { id } = useParams();
   const [carro, setCarro] = useState(null);
   const [franquia, setFranquia] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [freteCalculado, setFreteCalculado] = useState(null);
+  const navigate = useNavigate();
+
+  function handleAddToCart() {
+    if (!carro) return;
+    const frete = freteCalculado ?? 0;
+    const item = { ...carro, frete };
+    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    localStorage.setItem('carrinho', JSON.stringify([...carrinho, item]));
+    navigate('/carrinho');
+}
 
   useEffect(() => {
     async function fetchCarDetails() {
@@ -63,8 +75,16 @@ export function CarroDetalhes() {
 
       {/* A calculadora só aparece se tivermos os dados da franquia */}
       {franquia && (
-        <ShippingCalculator originState={franquia.estado} />
+        <ShippingCalculator originState={franquia.estado} 
+        onFreteCalculado={setFreteCalculado}
+        />
       )}
+
+      <button className="cart-button" onClick={handleAddToCart}
+      disabled={freteCalculado === null}
+      >
+        Adicionar ao Carrinho
+      </button>
     </div>
   );
 }

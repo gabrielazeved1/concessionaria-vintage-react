@@ -9,6 +9,7 @@ export function Header() {
         {/* Usamos Link em vez de <a> para navegação interna no React */}
         <Link to="/">Home</Link>
         <Link to="/catalogo">Catálogo</Link>
+        <Link to="/Carrinho">Carrinho</Link>
       </nav>
     </header>
   );

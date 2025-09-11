@@ -18,10 +18,24 @@ export function Catalogo() {
           api.get('/carros'),
           api.get('/franquias')
         ]);
-        setCarros(carrosResponse.data);
-        setFranquias(franquiasResponse.data);
+
+        const carros = carrosResponse.data;
+        const franquias = franquiasResponse.data;
+
+        const franquiaMap = new Map(franquias.map(f => [String(f.id), f]));
+        const carrosComCidade = carros.map(carro => {
+          const franquia = carro.franquiaId ? franquiaMap.get(String(carro.franquiaId)) : null;
+          return {
+            ...carro,
+            cidade: franquia ? franquia.cidade : 'Desconhecida',
+            nomeFranquia: franquia ? franquia.nome : '',
+          };
+        });
+
+        setCarros(carrosComCidade);
+        setFranquias(franquias);
       } catch (error) {
-        console.error("Erro ao buscar dados:", error);
+        console.error('Erro ao buscar dados:', error);
       }
     }
     fetchData();
@@ -50,10 +64,10 @@ export function Catalogo() {
       .filter(carro => {
         const searchTermMatch = carro.modelo.toLowerCase().includes(filters.searchTerm.toLowerCase());
         const brandMatch = filters.marca === 'all' || carro.marca === filters.marca;
-        
+
         // CORREÇÃO: Converte o valor do filtro para número antes de comparar
         const franquiaMatch = filters.franquia === 'all' || carro.franquiaId === parseInt(filters.franquia, 10);
-        
+
         return searchTermMatch && brandMatch && franquiaMatch;
       });
   }, [carros, filters]);
@@ -88,7 +102,7 @@ export function Catalogo() {
           Limpar Filtros
         </button>
       </div>
-      
+
       {filteredCars.length > 0 ? (
         <div className="car-list">
           {filteredCars.map(carro => (
